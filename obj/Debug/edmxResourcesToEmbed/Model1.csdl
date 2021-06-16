@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLySinhVienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblSinhVien">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="MaSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenSV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Diachi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Diem" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="QuanLySinhVienEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblSinhViens" EntityType="Self.tblSinhVien" />
+  </EntityContainer>
+</Schema>
