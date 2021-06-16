@@ -12,14 +12,16 @@ namespace QLSV
         QuanLySinhVienEntities context = new QuanLySinhVienEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int id =  Convert.ToInt32(Request.QueryString["ID"]);
-            tblSinhVien sv = context.tblSinhViens.Find(id);
-            txtMa.Text = sv.MaSV;
-            txtTen.Text = sv.TenSV;
-            txtDiachi.Text = sv.Diachi;
-            txtDiemThi.Text = sv.Diem.ToString();
-            txtLop.Text = sv.Lop;
-
+            if (!IsPostBack)
+            {
+                int id = Convert.ToInt32(Request.QueryString["ID"]);
+                tblSinhVien sv = context.tblSinhViens.Find(id);
+                txtMa.Text = sv.MaSV;
+                txtTen.Text = sv.TenSV;
+                txtDiachi.Text = sv.Diachi;
+                txtDiemThi.Text = sv.Diem.ToString();
+                txtLop.Text = sv.Lop;
+            }
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
